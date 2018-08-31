@@ -1,0 +1,25 @@
+<table>
+  <tr>
+    <th>Identifiant PDL</th>
+    <th>Date Début</th>
+    <th>Date Fin</th>
+    <th>Index Début</th>
+    <th>Index Fin</th>
+  </tr>
+    <% @links.each do |l| %>
+      <tr>
+        <td><%= l['Identifiant_Stable_PDL'] %></td>
+        <td><%= l['Date_Debut_Consommation'] %></td>
+        <td><%= l['Date_Fin_Consommation'] %></td>
+        <td><%= l['Index_Debut_Consommation'] %></td>
+        <td><%= if l['Index_A_Facturer'].present?
+                  l['Index_A_Facturer']
+                else
+                  '0'
+                end
+            %>
+         </td>
+      </tr>
+    <% end %>
+
+</table>
